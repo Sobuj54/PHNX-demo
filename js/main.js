@@ -117,19 +117,23 @@ document.querySelectorAll(".faq-item").forEach((item) => {
 });
 
 // 5. Section Reveals (Optimized)
-gsap.utils.toArray(".bento-card, .footer-col").forEach((el) => {
-  gsap.from(el, {
-    scrollTrigger: {
-      trigger: el,
-      start: "top 90%",
-      toggleActions: "play none none none",
-    },
-    opacity: 0,
-    y: 40,
-    duration: 1,
-    ease: "expo.out",
+gsap.utils
+  .toArray(
+    ".bento-card, .footer-col, .reserve-card, .testimonial-card, .faq-item",
+  )
+  .forEach((el) => {
+    gsap.from(el, {
+      scrollTrigger: {
+        trigger: el,
+        start: "top 90%",
+        toggleActions: "play none none none",
+      },
+      opacity: 0,
+      y: 40,
+      duration: 1,
+      ease: "expo.out",
+    });
   });
-});
 
 // 5.1 Stats Count-up Animation
 function animateCounter(el, value, suffix = "") {
@@ -178,18 +182,6 @@ heroTL
     "-=0.9",
   );
 
-// 7. Parallax Hero Visual
-gsap.to(".hero-visual", {
-  scrollTrigger: {
-    trigger: ".hero",
-    start: "top top",
-    end: "bottom top",
-    scrub: true,
-  },
-  y: 150,
-  opacity: 0,
-});
-
 // 8. Bento Image Hover Effect (Simulated via GSAP for consistency)
 document.querySelectorAll(".bento-card").forEach((card) => {
   const img = card.querySelector("img");
@@ -228,7 +220,17 @@ steps.forEach((step, i) => {
   });
 });
 
-// 10. Layout Stability Refresh
+// 10. Reserve Slot Smooth Scroll
+document.querySelector('a[href="#reserve"]').addEventListener("click", (e) => {
+  e.preventDefault();
+  lenis.scrollTo("#reserve", {
+    offset: -50,
+    duration: 1.5,
+    easing: gsap.parseEase("expo.out"),
+  });
+});
+
+// 11. Layout Stability Refresh
 // This ensures all ScrollTriggers are recalculated after the page is fully loaded,
 // preventing elements from staying hidden due to layout shifts (like pinning).
 window.addEventListener("load", () => {

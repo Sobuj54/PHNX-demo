@@ -195,7 +195,7 @@ nav {
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding-top: 120px;
+  padding-top: 140px;
   padding-bottom: 60px;
 }
 .hero-video {
@@ -224,11 +224,9 @@ nav {
   font-size: clamp(3.5rem, 10vw, 8rem);
   font-weight: 800;
   letter-spacing: -5px;
-  line-height: 0.9;
+  line-height: 1;
   margin-bottom: 30px;
   background: linear-gradient(180deg, #fff 30%, #444 100%);
-  /* background: white; */
-  line-height: 1;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -237,20 +235,6 @@ nav {
   color: var(--text-secondary);
   max-width: 550px;
   margin-bottom: 40px;
-}
-.hero-visual {
-  position: absolute;
-  right: -5%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50%;
-  height: 80%;
-  background: radial-gradient(
-    circle at center,
-    rgba(79, 172, 254, 0.15) 0%,
-    transparent 70%
-  );
-  z-index: 1;
 }
 
 /* Stats Section */
@@ -335,11 +319,6 @@ nav {
 }
 
 /* Process Section - Stacking Cards */
-#process {
-  position: relative;
-  padding-bottom: 100px;
-}
-
 .step-info {
   flex: 1;
 }
@@ -390,6 +369,52 @@ nav {
   font-size: 2rem;
   font-weight: 800;
   white-space: nowrap;
+}
+
+/* Testimonials */
+.testimonials {
+  padding-bottom: 0px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.testimonial-card {
+  background: var(--surface-color);
+  border: 1px solid var(--glass-border);
+  padding: 40px;
+  border-radius: 32px;
+  transition: all 0.3s ease;
+}
+.testimonial-card:hover {
+  border-color: var(--accent-blue);
+  transform: translateY(-10px);
+}
+.test-rating {
+  color: var(--accent-blue);
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+.test-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: var(--text-primary);
+}
+.author-name {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.author-title {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
 }
 
 /* FAQ */
@@ -443,6 +468,64 @@ nav {
 /* optional visual separation */
 .process-step:not(:last-child) {
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* Reserve Slot */
+#reserve {
+  background: var(--surface-color);
+}
+.reserve-card {
+  background: linear-gradient(145deg, #0f0f0f 0%, #050505 100%);
+  border: 1px solid var(--glass-border);
+  border-radius: 48px;
+  padding: 80px;
+  position: relative;
+  overflow: hidden;
+}
+.reserve-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 80%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(121, 40, 202, 0.05) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.reserve-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+.reserve-form input,
+.reserve-form select {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  padding: 18px 24px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.reserve-form input:focus,
+.reserve-form select:focus {
+  border-color: var(--accent-blue);
+  background: rgba(255, 255, 255, 0.05);
+}
+.reserve-form .btn {
+  border: none;
+  cursor: pointer;
+  flex: 1;
 }
 
 /* Footer Styling */
@@ -499,6 +582,9 @@ footer {
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .w-8,
   .w-4 {
     grid-column: span 6;
@@ -506,19 +592,34 @@ footer {
   .stats-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .reserve-card {
+    padding: 40px 24px;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+
+  .section-padding {
+    padding: 100px 0;
+  }
 }
 
 @media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
   .w-8,
   .w-4 {
     grid-column: span 12;
   }
-  .hero h1 {
-    letter-spacing: -2px;
+
+  .section-padding {
+    padding: 60px 0;
   }
 
-  .hero-visual {
-    display: none;
+  .hero h1 {
+    letter-spacing: -2px;
   }
 
   .process-step {
@@ -542,6 +643,14 @@ footer {
 }
 
 @media (max-width: 576px) {
+  .section-padding {
+    padding: 50px 0;
+  }
+
+  .brands {
+    padding: 50px 0;
+  }
+
   .process-step {
     padding: 20px;
   }

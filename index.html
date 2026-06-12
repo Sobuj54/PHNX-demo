@@ -35,7 +35,9 @@
         </div>
 
         <div style="display: flex; align-items: center; gap: 20px">
-          <a href="#" class="btn btn-primary desktop-only">Reserve Slot</a>
+          <a href="#reserve" class="btn btn-primary desktop-only"
+            >Reserve Slot</a
+          >
           <div class="hamburger mobile-only" id="hamburger">
             <span></span>
             <span></span>
@@ -52,7 +54,7 @@
         <a href="#process">Works</a>
         <a href="#faq">News</a>
         <a
-          href="#"
+          href="#reserve"
           class="btn btn-primary"
           style="margin-top: 20px; width: 100%; text-align: center"
           >Reserve Slot</a
@@ -95,27 +97,10 @@
           >
         </div>
       </div>
-      <div class="hero-visual"></div>
     </section>
 
     <section class="stats">
       <div class="container stats-grid">
-        <!-- <div class="stat-item">
-          <h3>14k+</h3>
-          <p>Devices Restored</p>
-        </div>
-        <div class="stat-item">
-          <h3>99.4%</h3>
-          <p>Data Integrity</p>
-        </div>
-        <div class="stat-item">
-          <h3>45m</h3>
-          <p>Avg. Turnaround</p>
-        </div>
-        <div class="stat-item">
-          <h3>Lifetime</h3>
-          <p>Part Warranty</p>
-        </div> -->
         <div class="stat-item">
           <h3 data-value="14000">0</h3>
           <p>Devices Restored</p>
@@ -199,7 +184,7 @@
     <section class="section-padding stats process-stats" id="process">
       <div class="container">
         <span class="section-tag">The Workflow</span>
-        <h2 class="section-title">From Defunct to Elite.</h2>
+        <h2 class="section-title">How It Works</h2>
 
         <div class="process-step">
           <div class="step-info">
@@ -270,6 +255,55 @@
       </div>
     </div>
 
+    <section class="section-padding testimonials" id="testimonials">
+      <div class="container">
+        <span class="section-tag">Social Proof</span>
+        <h2 class="section-title">What Our Customers Say.</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="test-rating">★★★★★</div>
+            <p class="test-text">
+              "The board-level repair on my iPhone was nothing short of
+              miraculous. Every other shop said it was dead. PHNX brought it
+              back to life."
+            </p>
+            <div class="test-author">
+              <div class="author-info">
+                <span class="author-name">James Sterling</span>
+                <span class="author-title">Mobile Architect</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="test-rating">★★★★★</div>
+            <p class="test-text">
+              "Precision surgery indeed. The screen replacement on my S24 Ultra
+              is flawless. TrueTone and fingerprint sensor work perfectly."
+            </p>
+            <div class="test-author">
+              <div class="author-info">
+                <span class="author-name">Elena Rossi</span>
+                <span class="author-title">Tech Reviewer</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="test-rating">★★★★★</div>
+            <p class="test-text">
+              "Fast, professional, and transparent. The forensic data recovery
+              saved years of family photos from a water-damaged device."
+            </p>
+            <div class="test-author">
+              <div class="author-info">
+                <span class="author-name">Marcus Chen</span>
+                <span class="author-title">Visual Director</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section-padding" id="faq">
       <div class="container">
         <span class="section-tag">Intelligence</span>
@@ -302,6 +336,49 @@
               Yes. We specialize in ultrasonic cleaning and NAND transplantation
               to recover data from catastrophic liquid ingress.
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding" id="reserve">
+      <div class="container">
+        <div class="reserve-card">
+          <div class="reserve-content">
+            <span class="section-tag">Direct Access</span>
+            <h2 class="section-title" style="margin-bottom: 20px">
+              Reserve Your Slot.
+            </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 40px">
+              Priority engineering for your frontier devices. Provide your
+              details to secure a professional diagnostic appointment.
+            </p>
+            <form class="reserve-form">
+              <div class="form-row">
+                <input type="text" placeholder="Full Name" required />
+                <input type="email" placeholder="Email Address" required />
+              </div>
+              <div class="form-row">
+                <input type="tel" placeholder="Phone Number" required />
+                <input
+                  type="text"
+                  placeholder="Device Model (e.g. iPhone 15 Pro Max)"
+                  required
+                />
+              </div>
+              <div class="form-row">
+                <input
+                  type="text"
+                  placeholder="Describe your issue (e.g. Cracked screen, Water damage)"
+                  required
+                />
+              </div>
+              <div class="form-row">
+                <button type="submit" class="btn btn-primary">
+                  Confirm Reservation
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
