@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PHNX REPAIR | Frontier Mobile Engineering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          align-items: center;
+        "
+      >
+        <div class="logo">PHNX_</div>
+
+        <div class="nav-links desktop-only">
+          <a href="#" class="active">Home</a>
+          <a href="#services">About</a>
+          <a href="#process">Works</a>
+          <a href="#faq">News</a>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 20px">
+          <a href="#" class="btn btn-primary desktop-only">Reserve Slot</a>
+          <div class="hamburger mobile-only" id="hamburger">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="close-btn" id="closeMenu">&times;</div>
+      <div class="mobile-links">
+        <a href="#"><span class="active">Home</span></a>
+        <a href="#services">About</a>
+        <a href="#process">Works</a>
+        <a href="#faq">News</a>
+        <a
+          href="#"
+          class="btn btn-primary"
+          style="margin-top: 20px; width: 100%; text-align: center"
+          >Reserve Slot</a
+        >
+      </div>
+    </div>
+
+    <section class="hero">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="hero-video"
+        poster="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=2000"
+      >
+        <source src="assets/mobile-repair.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <span class="section-tag" id="h-tag">Frontier Mobile Engineering</span>
+        <h1 id="h-title">Defy The<br />Broken.</h1>
+        <p id="h-desc">
+          A premium ecosystem for mobile restoration. We merge high-precision
+          micro-engineering with factory-grade aesthetics to revive your
+          frontier devices.
+        </p>
+        <div id="h-btn">
+          <a href="#" class="btn btn-primary">Start Diagnosis</a>
+          <a
+            href="#"
+            style="
+              margin-left: 20px;
+              color: #fff;
+              text-decoration: none;
+              font-weight: 700;
+              font-size: 0.9rem;
+            "
+            >View Pricing →</a
+          >
+        </div>
+      </div>
+      <div class="hero-visual"></div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <!-- <div class="stat-item">
+          <h3>14k+</h3>
+          <p>Devices Restored</p>
+        </div>
+        <div class="stat-item">
+          <h3>99.4%</h3>
+          <p>Data Integrity</p>
+        </div>
+        <div class="stat-item">
+          <h3>45m</h3>
+          <p>Avg. Turnaround</p>
+        </div>
+        <div class="stat-item">
+          <h3>Lifetime</h3>
+          <p>Part Warranty</p>
+        </div> -->
+        <div class="stat-item">
+          <h3 data-value="14000">0</h3>
+          <p>Devices Restored</p>
+        </div>
+
+        <div class="stat-item">
+          <h3 data-value="99.4">0</h3>
+          <p>Data Integrity</p>
+        </div>
+
+        <div class="stat-item">
+          <h3 data-value="45">0</h3>
+          <p>Avg. Turnaround</p>
+        </div>
+
+        <div class="stat-item">
+          <h3 data-value="1">0</h3>
+          <p>Lifetime Part Warranty</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding" id="services">
+      <div class="container">
+        <span class="section-tag">Core Capabilities</span>
+        <h2 class="section-title">What We Fix</h2>
+        <div class="bento-grid">
+          <div class="bento-card w-8">
+            <img
+              src="https://images.pexels.com/photos/7151031/pexels-photo-7151031.jpeg"
+              alt="Screen Repair"
+            />
+            <div class="card-content">
+              <h3>Screen Replacement</h3>
+              <p>
+                OLED/Liquid Retina replacement with factory-level TrueTone
+                calibration.
+              </p>
+            </div>
+          </div>
+          <div
+            class="w-4 bento-card"
+            style="border-bottom: 4px solid var(--accent-purple)"
+          >
+            <img
+              src="https://images.pexels.com/photos/719399/pexels-photo-719399.jpeg"
+              alt="Battery"
+            />
+            <div class="card-content">
+              <h3>Battery Replacement</h3>
+              <p>Battery sequencing and PMIC chip restoration.</p>
+            </div>
+          </div>
+          <div class="w-4 bento-card">
+            <img
+              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+              alt="Data Recovery"
+            />
+            <div class="card-content">
+              <h3>Forensic Recovery</h3>
+              <p>Catastrophic data extraction from board-level failures.</p>
+            </div>
+          </div>
+          <div
+            class="w-8 bento-card"
+            style="border-bottom: 4px solid var(--accent-blue)"
+          >
+            <img
+              src="https://images.pexels.com/photos/6755136/pexels-photo-6755136.jpeg"
+              alt="Circuit Board"
+            />
+            <div class="card-content">
+              <h3>Micro-Soldering</h3>
+              <p>Complex IC reballing and precision board-level diagnostics.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding stats process-stats" id="process">
+      <div class="container">
+        <span class="section-tag">The Workflow</span>
+        <h2 class="section-title">From Defunct to Elite.</h2>
+
+        <div class="process-step">
+          <div class="step-info">
+            <span class="step-number">01</span>
+            <h3>Digital Triage</h3>
+            <p>
+              Every device undergoes a 42-point hardware scan using our
+              proprietary diagnostic suite to identify core and peripheral
+              failure points.
+            </p>
+          </div>
+          <div class="step-image">
+            <img
+              src="https://images.unsplash.com/photo-1746005514011-ea00280f3b6e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-info">
+            <span class="step-number">02</span>
+            <h3>Precision Surgery</h3>
+            <p>
+              Repairs are conducted in ISO-certified clean environments. We use
+              laser-guided precision for adhesive removal and component
+              placement.
+            </p>
+          </div>
+          <div class="step-image">
+            <img
+              src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-info">
+            <span class="step-number">03</span>
+            <h3>Quality Sync</h3>
+            <p>
+              Post-repair, devices enter an automated stress test environment to
+              ensure thermal stability and interface responsiveness.
+            </p>
+          </div>
+          <div class="step-image">
+            <img
+              src="https://images.unsplash.com/photo-1611396000732-f8c9a933424f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="brands">
+      <div class="container">
+        <div class="brand-track">
+          <div class="brand-item">APPLE IPHONE</div>
+          <div class="brand-item">SAMSUNG GALAXY</div>
+          <div class="brand-item">GOOGLE PIXEL</div>
+          <div class="brand-item">ONEPLUS</div>
+          <div class="brand-item">SONY XPERIA</div>
+          <div class="brand-item">APPLE IPHONE</div>
+          <div class="brand-item">SAMSUNG GALAXY</div>
+          <div class="brand-item">GOOGLE PIXEL</div>
+          <div class="brand-item">ONEPLUS</div>
+          <div class="brand-item">SONY XPERIA</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section-padding" id="faq">
+      <div class="container">
+        <span class="section-tag">Intelligence</span>
+        <h2 class="section-title">Frequently Asked.</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-q">
+              Does repair void my warranty? <span>+</span>
+            </div>
+            <div class="faq-a">
+              We use OEM-spec parts and provide a lifetime guarantee on our
+              hardware. Most modern regulations protect your right to repair
+              without voiding device integrity.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">
+              How long does a logic board repair take? <span>+</span>
+            </div>
+            <div class="faq-a">
+              Complex micro-soldering typically takes 24-48 hours depending on
+              the extent of IC damage and trace restoration required.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">
+              Can you recover data from water damage? <span>+</span>
+            </div>
+            <div class="faq-a">
+              Yes. We specialize in ultrasonic cleaning and NAND transplantation
+              to recover data from catastrophic liquid ingress.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="logo" style="margin-bottom: 20px">PHNX_</div>
+            <p
+              style="
+                color: var(--text-secondary);
+                max-width: 300px;
+                margin-bottom: 20px;
+              "
+            >
+              Redefining mobile engineering for the frontier generation.
+              Precision. Performance. Preservation.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Ecosystem</h4>
+            <ul>
+              <li><a href="#">Repairs</a></li>
+              <li><a href="#">Data Lab</a></li>
+              <li><a href="#">Enterprise</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">Our Lab</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Social</h4>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 PHNX REPAIR LABS. ALL RIGHTS RESERVED.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Library Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+
+    <!-- Project Logic -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
