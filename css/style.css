@@ -224,17 +224,20 @@ nav {
   font-size: clamp(3.5rem, 10vw, 8rem);
   font-weight: 800;
   letter-spacing: -5px;
-  line-height: 1;
-  margin-bottom: 30px;
   background: linear-gradient(180deg, #fff 30%, #444 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .hero p {
   font-size: 1.25rem;
   color: var(--text-secondary);
-  max-width: 550px;
+  max-width: 80%;
   margin-bottom: 40px;
+}
+
+.hero .section-tag {
+  margin-bottom: -10px;
 }
 
 /* Stats Section */
