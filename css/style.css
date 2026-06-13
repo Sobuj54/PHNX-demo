@@ -505,6 +505,10 @@ nav {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .faq-a {
   height: 0;
