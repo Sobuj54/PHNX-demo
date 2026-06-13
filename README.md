@@ -22,13 +22,15 @@ Live Demo: https://phnx-r.netlify.app/
 
 ## Project Structure
 
+```text
 /
-├── index.html # Main entry point and structure
-├── assets/ # Media files including images and background video
+├── index.html          # Main entry point and structure
+├── assets/             # Media files including images and background video
 ├── css/
-│ └── style.css # Stylesheets and design tokens
+│   └── style.css       # Stylesheets and design tokens
 └── js/
-└── main.js # GSAP animations and site logic
+    └── main.js         # GSAP animations and site logic
+```
 
 ## Getting Started
 
