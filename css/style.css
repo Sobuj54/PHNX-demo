@@ -681,10 +681,10 @@ footer {
 
 footer .logo {
   margin-bottom: 15px;
+}
 
-  img {
-    height: 80px;
-  }
+footer .logo img {
+  height: 80px;
 }
 
 /* Responsive */
