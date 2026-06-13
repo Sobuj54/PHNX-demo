@@ -1,13 +1,14 @@
 :root {
   --bg-color: #000000;
-  --surface-color: #0a0a0a;
+  --surface-color: #0a0a0ad2;
   --text-primary: #ffffff;
   --text-secondary: #a1a1aa;
   --accent-blue: #4facfe;
   --accent-purple: #7928ca;
   --accent-orange: #f38181;
   --glass: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.178);
+  --wooden-color: #da6d42;
 }
 
 * {
@@ -40,7 +41,7 @@ body {
   letter-spacing: 3px;
   font-size: 0.75rem;
   font-weight: 800;
-  color: var(--accent-blue);
+  color: var(--wooden-color);
   margin-bottom: 20px;
   display: block;
 }
@@ -50,8 +51,11 @@ body {
   letter-spacing: -2px;
   line-height: 1.1;
   margin-bottom: 60px;
+  background: linear-gradient(180deg, #fff 60%, var(--wooden-color) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
 /* Navigation */
 nav {
   position: fixed;
@@ -98,6 +102,7 @@ nav {
 .btn-primary {
   background: #fff;
   color: #000;
+  border: 1px solid var(--wooden-color);
 }
 .btn-primary:hover {
   transform: translateY(-2px);
@@ -112,15 +117,6 @@ nav {
 }
 .mobile-only {
   display: none;
-}
-
-@media (max-width: 768px) {
-  .desktop-only {
-    display: none !important;
-  }
-  .mobile-only {
-    display: flex;
-  }
 }
 
 /* Hamburger Style */
@@ -224,20 +220,25 @@ nav {
   font-size: clamp(3.5rem, 10vw, 8rem);
   font-weight: 800;
   letter-spacing: -5px;
-  background: linear-gradient(180deg, #fff 30%, #444 100%);
+  line-height: 1.1;
+  background: linear-gradient(180deg, #fff 40%, var(--wooden-color) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 .hero p {
   font-size: 1.25rem;
   color: var(--text-secondary);
   max-width: 80%;
+  margin-top: 20px;
   margin-bottom: 40px;
 }
 
 .hero .section-tag {
-  margin-bottom: -10px;
+  margin-bottom: 10px;
 }
 
 /* Stats Section */
@@ -270,6 +271,71 @@ nav {
   text-transform: uppercase;
   font-size: 0.75rem;
   letter-spacing: 2px;
+}
+
+/* Services Grid */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.service-card {
+  background: var(--surface-color);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 20px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--wooden-color);
+  box-shadow: 0 20px 40px rgba(188, 117, 53, 0.1);
+}
+.service-card .card-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.service-card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.service-card:hover .card-image img {
+  transform: scale(1.1);
+}
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+.service-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.service-card .card-link {
+  margin-top: auto;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+.service-card:hover .card-link {
+  opacity: 1;
 }
 
 /* Services Bento */
@@ -317,6 +383,9 @@ nav {
 .w-8 {
   grid-column: span 8;
 }
+.w-6 {
+  grid-column: span 6;
+}
 .w-4 {
   grid-column: span 4;
 }
@@ -328,7 +397,7 @@ nav {
 .step-number {
   font-size: 2rem;
   font-weight: 800;
-  color: var(--accent-blue);
+  color: var(--wooden-color);
   margin-bottom: 20px;
   display: block;
 }
@@ -392,11 +461,11 @@ nav {
   transition: all 0.3s ease;
 }
 .testimonial-card:hover {
-  border-color: var(--accent-blue);
+  border-color: var(--wooden-color);
   transform: translateY(-10px);
 }
 .test-rating {
-  color: var(--accent-blue);
+  color: var(--wooden-color);
   margin-bottom: 20px;
   font-size: 1.1rem;
 }
@@ -476,6 +545,7 @@ nav {
 /* Reserve Slot */
 #reserve {
   background: var(--surface-color);
+  border-top: 1px solid var(--glass-border);
 }
 .reserve-card {
   background: linear-gradient(145deg, #0f0f0f 0%, #050505 100%);
@@ -525,10 +595,21 @@ nav {
   border-color: var(--accent-blue);
   background: rgba(255, 255, 255, 0.05);
 }
+
+.form-row:has(.submit-btn) {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+}
+
 .reserve-form .btn {
-  border: none;
   cursor: pointer;
-  flex: 1;
+  margin-top: 10px;
+  font-size: 1rem;
 }
 
 /* Footer Styling */
@@ -565,7 +646,7 @@ footer {
 }
 
 .footer-bottom {
-  margin-top: 80px;
+  margin-top: 50px;
   padding-top: 40px;
   border-top: 1px solid var(--glass-border);
   color: var(--text-secondary);
@@ -589,6 +670,7 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
   .w-8,
+  .w-6,
   .w-4 {
     grid-column: span 6;
   }
@@ -599,6 +681,7 @@ footer {
   .reserve-card {
     padding: 40px 24px;
   }
+
   .form-row {
     flex-direction: column;
   }
@@ -609,10 +692,22 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: flex;
+  }
+
   .testimonials-grid {
     grid-template-columns: 1fr;
   }
   .w-8,
+  .w-6,
   .w-4 {
     grid-column: span 12;
   }
@@ -646,6 +741,14 @@ footer {
 }
 
 @media (max-width: 576px) {
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
   .section-padding {
     padding: 50px 0;
   }

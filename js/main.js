@@ -28,7 +28,7 @@ ScrollTrigger.create({
   onEnter: () =>
     gsap.to("#navbar", {
       background: "rgba(0,0,0,0.8)",
-      backdropFilter: "blur(20px)",
+      backdropFilter: "blur(10px)",
       padding: "16px 0",
       duration: 0.3,
       ease: "power2.out",
@@ -119,7 +119,7 @@ document.querySelectorAll(".faq-item").forEach((item) => {
 // 5. Section Reveals (Optimized)
 gsap.utils
   .toArray(
-    ".bento-card, .footer-col, .reserve-card, .testimonial-card, .faq-item",
+    ".service-card, .bento-card, .footer-col, .reserve-card, .testimonial-card, .faq-item",
   )
   .forEach((el) => {
     gsap.from(el, {
