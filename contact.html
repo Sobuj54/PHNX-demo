@@ -3,12 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GP | Contact Us</title>
+    <title>Contact Us | PHNX REPAIR LABS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
 
     <!-- External Styles -->
@@ -27,12 +31,12 @@
         <div class="nav-links desktop-only">
           <a href="index.html">Home</a>
           <a href="about.html">About Us</a>
-          <a href="#process">Price List</a>
+          <a href="pricing.html">Price List</a>
           <a href="#" class="active">Contact</a>
         </div>
 
         <div style="display: flex; align-items: center; gap: 20px">
-          <a href="contact.html" class="btn btn-primary desktop-only"
+          <a href="reserve.html" class="btn btn-primary desktop-only"
             >Reserve Slot</a
           >
           <div class="hamburger mobile-only" id="hamburger">
@@ -47,54 +51,113 @@
       <div class="close-btn" id="closeMenu">&times;</div>
       <div class="mobile-links">
         <a href="index.html">Home</a>
-        <a href="about.html"><span class="active">About Us</span></a>
-        <a href="#process">Price List</a>
-        <a href="#">Contact</a>
-        <a href="reserve.html">Reserve Slot</a>
+        <a href="about.html">About Us</a>
+        <a href="pricing.html">Price List</a>
+        <a href="#" class="active">Contact</a>
+        <a href="reserve.html" style="text-align: center">Reserve Slot</a>
       </div>
     </div>
 
-    <section class="section-padding" id="reserve">
+    <section class="contact-hero">
       <div class="container">
-        <div class="reserve-card">
-          <div class="reserve-content">
-            <span class="section-tag">Direct Access</span>
-            <h2 style="margin-bottom: 20px">
-              <span class="section-title"> Reserve Your Slot. </span>
-            </h2>
-            <p style="color: var(--text-secondary); margin-bottom: 40px">
-              Priority engineering for your frontier devices. Provide your
-              details to secure a professional diagnostic appointment.
+        <span class="section-tag" id="h-tag">Get in Touch</span>
+        <h1 id="h-title">Engineers on Standby.</h1>
+        <p id="h-desc">
+          Have a question about a complex repair or need an urgent diagnostic?
+          Our lab is ready to assist.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-padding contact-container">
+      <div class="container contact-grid">
+        <!-- Contact Info Side -->
+        <div class="contact-info reveal-item">
+          <div class="info-block">
+            <span class="section-tag">Lab Location</span>
+            <h3>Visit Our Facility</h3>
+            <p>
+              123 Engineering Way, Tech District<br />Innovation City, ST 56789
             </p>
-            <form class="reserve-form">
-              <div class="form-row">
-                <input type="text" placeholder="Full Name" required />
-                <input type="email" placeholder="Email Address" required />
-              </div>
-              <div class="form-row">
-                <input type="tel" placeholder="Phone Number" required />
-                <input
-                  type="text"
-                  placeholder="Device Model (e.g. iPhone 15 Pro Max)"
-                  required
-                />
-              </div>
-              <div class="form-row">
-                <input
-                  type="text"
-                  placeholder="Describe your issue (e.g. Cracked screen, Water damage)"
-                  required
-                />
-              </div>
-              <div class="form-row">
-                <div class="submit-btn">
-                  <button type="submit" class="btn btn-primary">
-                    Confirm Reservation
-                  </button>
-                </div>
-              </div>
-            </form>
           </div>
+
+          <div class="info-block">
+            <span class="section-tag">Operating Hours</span>
+            <div class="hours-list">
+              <div class="hour-row">
+                <span>Mon - Fri</span><span>09:00 - 19:00</span>
+              </div>
+              <div class="hour-row">
+                <span>Saturday</span><span>10:00 - 16:00</span>
+              </div>
+              <div class="hour-row"><span>Sunday</span><span>Closed</span></div>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <span class="section-tag">Direct Lines</span>
+            <p><i class="fa-solid fa-phone"></i> +1 (555) PHNX-FIX</p>
+            <p><i class="fa-solid fa-envelope"></i> lab@phnxrepair.com</p>
+          </div>
+
+          <div class="trust-signal">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <p>
+              Average response time for inquiries:
+              <strong>15 minutes</strong> during lab hours.
+            </p>
+          </div>
+        </div>
+
+        <!-- Contact Form Side -->
+        <div class="contact-form-wrapper reveal-item">
+          <form class="contact-form">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="e.g. John Doe" required />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="john@example.com" required />
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="+1 (555) 000-0000" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Device Model</label>
+                <input type="text" placeholder="e.g. iPhone 15 Pro" required />
+              </div>
+              <div class="form-group">
+                <label>Inquiry Type</label>
+                <input
+                  type="text"
+                  placeholder="e.g. Repair Question, Diagnostic Request"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Detailed Message</label>
+              <textarea
+                placeholder="Describe the issue or your question in detail..."
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <div class="submit-button">
+              <button type="submit" class="btn btn-primary">
+                Dispatch Inquiry <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -104,7 +167,9 @@
         <div class="footer-grid">
           <div class="footer-col">
             <div class="logo">
-              <img src="assets/logo.png" alt="PHNX REPAIR" />
+              <a href="index.html"
+                ><img src="assets/logo.png" alt="PHNX REPAIR"
+              /></a>
             </div>
             <p
               style="
@@ -120,15 +185,15 @@
           <div class="footer-col">
             <h4>Ecosystem</h4>
             <ul>
-              <li><a href="#">Repairs</a></li>
-              <li><a href="#">Data Lab</a></li>
+              <li><a href="index.html#services">Repairs</a></li>
+              <li><a href="about.html#lab">Data Lab</a></li>
               <li><a href="#">Enterprise</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h4>Company</h4>
             <ul>
-              <li><a href="#">Our Lab</a></li>
+              <li><a href="about.html">Our Lab</a></li>
               <li><a href="#">Careers</a></li>
               <li><a href="#">Press</a></li>
             </ul>
@@ -143,7 +208,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>© 2026 Global Phone. ALL RIGHTS RESERVED.</p>
+          <p>© 2026 PHNX REPAIR LABS. ALL RIGHTS RESERVED.</p>
         </div>
       </div>
     </footer>
