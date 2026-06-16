@@ -3,8 +3,6 @@
   --surface-color: #0a0a0ad2;
   --text-primary: #ffffff;
   --text-secondary: #a1a1aa;
-  --accent-purple: #7928ca;
-  --accent-orange: #f38181;
   --glass: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.178);
   --wooden-color: #da6d42;
@@ -22,12 +20,11 @@ body {
   color: var(--text-primary);
   overflow-x: hidden;
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
 }
 
 /* --- Global Utilities --- */
 .container {
-  padding: 0 5%;
+  /* padding: 0 5%; */
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
@@ -62,6 +59,38 @@ body {
 
 h2:has(.section-title) {
   margin-bottom: 60px;
+}
+
+/* --- Stats Component --- */
+.stats {
+  background: var(--surface-color);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 40px;
+  padding: 80px 40px !important;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-item h3 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+.stat-item p {
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
 }
 
 /* --- Navigation --- */
@@ -256,10 +285,20 @@ footer .logo img {
   height: 80px;
 }
 
+@media (max-width: 1400px) {
+  .container {
+    padding: 0 5%;
+  }
+}
+
 /* --- Global Media Queries --- */
 @media (max-width: 1024px) {
   .section-padding {
     padding: 100px 0;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -271,8 +310,17 @@ footer .logo img {
     display: flex;
   }
 
+  h2:has(.section-title) {
+    margin-bottom: 50px;
+  }
+
   .section-padding {
     padding: 60px 0;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
   }
 
   .footer-bottom {
@@ -285,6 +333,14 @@ footer .logo img {
 @media (max-width: 576px) {
   .section-padding {
     padding: 50px 0;
+  }
+
+  h2:has(.section-title) {
+    margin-bottom: 40px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
   }
 
   footer {

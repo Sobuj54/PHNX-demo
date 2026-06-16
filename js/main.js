@@ -119,7 +119,7 @@ document.querySelectorAll(".faq-item").forEach((item) => {
 // 5. Section Reveals (Optimized)
 gsap.utils
   .toArray(
-    ".service-card, .bento-card, .footer-col, .reserve-card, .testimonial-card, .faq-item",
+    ".service-card, .bento-card, .footer-col, .reserve-card, .testimonial-card, .faq-item, .reveal-item, .protocol-card, .story-content, .story-image, .guarantee-card",
   )
   .forEach((el) => {
     gsap.from(el, {
@@ -160,6 +160,15 @@ document.querySelectorAll(".stat-item h3").forEach((el) => {
   if (raw === "99.4") animateCounter(el, 99.4, "%");
   if (raw === "45") animateCounter(el, 45, "m");
   if (raw === "1") el.textContent = "Lifetime";
+  
+  // New About Page Stats
+  if (raw === "100" && el.textContent === "0") {
+     const p = el.nextElementSibling.textContent;
+     if (p.includes("ISO")) animateCounter(el, 100, "");
+     if (p.includes("Privacy")) animateCounter(el, 100, "%");
+  }
+  if (raw === "42") animateCounter(el, 42, "");
+  if (raw === "24") animateCounter(el, 24, "");
 });
 
 // 6. Hero Entrance

@@ -3,12 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GP | About Us</title>
+    <title>About | PHNX REPAIR LABS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
 
     <!-- External Styles -->
@@ -26,17 +30,21 @@
           align-items: center;
         "
       >
-        <div class="logo"><img src="assets/logo.png" alt="PHNX REPAIR" /></div>
+        <div class="logo">
+          <a href="index.html"
+            ><img src="assets/logo.png" alt="PHNX REPAIR"
+          /></a>
+        </div>
 
         <div class="nav-links desktop-only">
           <a href="index.html">Home</a>
-          <a href="#" class="active">About</a>
-          <a href="#process">Works</a>
-          <a href="#faq">News</a>
+          <a href="#" class="active">About Us</a>
+          <a href="pricing.html">Price List</a>
+          <a href="contact.html">Contact</a>
         </div>
 
         <div style="display: flex; align-items: center; gap: 20px">
-          <a href="contact.html" class="btn btn-primary desktop-only"
+          <a href="reserve.html" class="btn btn-primary desktop-only"
             >Reserve Slot</a
           >
           <div class="hamburger mobile-only" id="hamburger">
@@ -51,24 +59,235 @@
       <div class="close-btn" id="closeMenu">&times;</div>
       <div class="mobile-links">
         <a href="index.html">Home</a>
-        <a href="#s"><span class="active">About</span></a>
-        <a href="#process">Works</a>
-        <a href="#faq">News</a>
-        <a
-          href=""
-          class="btn btn-primary"
-          style="margin-top: 20px; width: 100%; text-align: center"
-          >Reserve Slot</a
-        >
+        <a href="about.html"><span class="active">About Us</span></a>
+        <a href="pricing.html">Price List</a>
+        <a href="contact.html">Contact</a>
+        <a href="reserve.html" style="text-align: center">Reserve Slot</a>
       </div>
     </div>
+
+    <section class="about-hero">
+      <div class="hero-bg">
+        <img
+          src="https://images.unsplash.com/photo-1611396000732-f8c9a933424f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="mobile repair"
+        />
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <span class="section-tag" id="h-tag"
+          >The Architecture of Restoration</span
+        >
+        <h1 id="h-title">Precision Is Our DNA.</h1>
+        <p id="h-desc">
+          Global Phone was founded on a singular premise: that high-performance
+          mobile devices deserve factory-grade engineering, even after the
+          warranty expires.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-padding story-section">
+      <div class="container story-grid">
+        <div class="story-content">
+          <span class="section-tag">Our Story</span>
+          <h2><span class="section-title">Who We Are</span></h2>
+          <p>
+            In an era of planned obsolescence, we chose a different path. PHNX
+            started as a boutique micro-soldering lab for enterprise hardware.
+            Today, we bring that same level of forensic precision to your
+            personal frontier devices.
+          </p>
+          <p>
+            We don't just "fix" phones; we restore their structural and digital
+            integrity using ISO-certified environments and laser-guided
+            accuracy.
+          </p>
+        </div>
+        <div class="story-image">
+          <img
+            src="https://images.unsplash.com/photo-1597733336794-12d05021d510?q=80&w=1974&auto=format&fit=crop"
+            alt="Microscope Repair"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding protocol-section">
+      <div class="container">
+        <span class="section-tag">The Standards</span>
+        <h2><span class="section-title">The Global Phone Protocol.</span></h2>
+        <div class="protocol-grid">
+          <div class="protocol-card reveal-item">
+            <div class="protocol-icon">01</div>
+            <h3>OEM-Spec Sourcing</h3>
+            <p>
+              We utilize components that meet or exceed original factory
+              specifications. No compromises on display color gamut or battery
+              cycle life.
+            </p>
+          </div>
+          <div class="protocol-card reveal-item">
+            <div class="protocol-icon">02</div>
+            <h3>Data Sanctity</h3>
+            <p>
+              Your data is a closed loop. Our protocols ensure zero external
+              access to NAND storage during the restoration process.
+            </p>
+          </div>
+          <div class="protocol-card reveal-item">
+            <div class="protocol-icon">03</div>
+            <h3>Lifespan Extension</h3>
+            <p>
+              Every repair is a commitment to sustainability. We don't just swap
+              modules; we solve the root thermal and electrical issues.
+            </p>
+          </div>
+          <div class="protocol-card reveal-item">
+            <div class="protocol-icon">04</div>
+            <h3>Precision Calibration</h3>
+            <p>
+              Hardware is only half the battle. We perform software-level
+              re-calibration for FaceID, TrueTone, and haptic engines to ensure
+              native OS feature parity.
+            </p>
+          </div>
+
+          <div class="protocol-card reveal-item">
+            <div class="protocol-icon">05</div>
+            <h3>Atmospheric Control</h3>
+            <p>
+              All critical assemblies occur in ISO-certified clean-room
+              environments to prevent microscopic particulate ingress and
+              electrostatic discharge.
+            </p>
+          </div>
+
+          <div class="protocol-card reveal-item">
+            <div class="protocol-icon">06</div>
+            <h3>Integrity Validation</h3>
+            <p>
+              Every device undergoes a 42-point diagnostic sweep, testing
+              everything from RF signal attenuation to thermal dissipation under
+              peak processing loads.
+            </p>
+          </div>
+
+          <div class="protocol-card reveal-item">
+            <div class="protocol-icon">07</div>
+            <h3>Molecular Sealing</h3>
+            <p>
+              We re-apply factory-grade gaskets and specialized adhesives to
+              restore IP68 water and dust resistance, maintaining the device's
+              original structural seal.
+            </p>
+          </div>
+
+          <div class="protocol-card reveal-item">
+            <div class="protocol-icon">08</div>
+            <h3>Chain of Custody</h3>
+            <p>
+              From intake to delivery, your device is tracked via an encrypted
+              ledger, documenting every technician interaction and component
+              serial number used.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats reveal-item">
+      <div class="container stats-grid">
+        <div class="stat-item">
+          <h3 data-value="100">0</h3>
+          <p>ISO Clean Room Grade</p>
+        </div>
+        <div class="stat-item">
+          <h3 data-value="42">0</h3>
+          <p>Point Diagnostic Suite</p>
+        </div>
+        <div class="stat-item">
+          <h3 data-value="24">0</h3>
+          <p>Hour Express Triage</p>
+        </div>
+        <div class="stat-item">
+          <h3 data-value="100">0</h3>
+          <p>Data Privacy Guaranteed</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding guarantees-section">
+      <div class="container">
+        <span class="section-tag">Reliability</span>
+        <h2><span class="section-title">Our Guarantees.</span></h2>
+
+        <div class="guarantees-grid">
+          <div class="guarantee-card reveal-item">
+            <div class="guarantee-header">
+              <i class="fa-solid fa-shield-halved guarantee-icon"></i>
+              <h3>2-Month Warranty</h3>
+            </div>
+            <p>
+              All functional repairs come with a 2-month warranty on parts and
+              labor. If something fails related to our repair within that
+              period, we fix it at no additional cost.
+            </p>
+            <p class="guarantee-note">
+              Note: does not cover physical damage (LCD/glass breakage) or water
+              damage. Previously water-damaged devices are excluded.
+            </p>
+          </div>
+
+          <div class="guarantee-card reveal-item">
+            <div class="guarantee-header">
+              <i class="fa-solid fa-triangle-exclamation guarantee-icon"></i>
+              <h3>No Fix, No Fee</h3>
+            </div>
+            <p>
+              If we can't repair your device, you don't pay for the repair
+              attempt. We'll be transparent about what's fixable before any work
+              begins.
+            </p>
+          </div>
+
+          <div class="guarantee-card reveal-item">
+            <div class="guarantee-header">
+              <i class="fa-solid fa-lock guarantee-icon"></i>
+              <h3>Data Privacy</h3>
+            </div>
+            <p>
+              We never access your personal data unless absolutely necessary and
+              with your explicit permission. Your privacy matters to us.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding contact-cta">
+      <div class="container">
+        <div class="cta-card reveal-item">
+          <span class="section-tag">Ready for a</span>
+          <h2>
+            <span class="section-title">Digital Revival?</span>
+          </h2>
+          <p>
+            Secure your slot in our lab for a professional diagnostic session.
+          </p>
+          <a href="reserve.html" class="btn btn-primary">Start Diagnosis</a>
+        </div>
+      </div>
+    </section>
 
     <footer>
       <div class="container">
         <div class="footer-grid">
           <div class="footer-col">
             <div class="logo">
-              <img src="assets/logo.png" alt="PHNX REPAIR" />
+              <a href="index.html"
+                ><img src="assets/logo.png" alt="PHNX REPAIR"
+              /></a>
             </div>
             <p
               style="
@@ -84,7 +303,7 @@
           <div class="footer-col">
             <h4>Ecosystem</h4>
             <ul>
-              <li><a href="#">Repairs</a></li>
+              <li><a href="index.html#services">Repairs</a></li>
               <li><a href="#">Data Lab</a></li>
               <li><a href="#">Enterprise</a></li>
             </ul>
@@ -92,7 +311,7 @@
           <div class="footer-col">
             <h4>Company</h4>
             <ul>
-              <li><a href="#">Our Lab</a></li>
+              <li><a href="about.html">Our Lab</a></li>
               <li><a href="#">Careers</a></li>
               <li><a href="#">Press</a></li>
             </ul>

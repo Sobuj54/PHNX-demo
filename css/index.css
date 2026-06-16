@@ -55,38 +55,6 @@
   margin-bottom: 10px;
 }
 
-/* --- Stats Section --- */
-.stats {
-  background: var(--surface-color);
-  border-top: 1px solid var(--glass-border);
-  border-bottom: 1px solid var(--glass-border);
-}
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: center;
-  gap: 40px;
-  padding: 60px 40px;
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.stat-item h3 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 5px;
-}
-.stat-item p {
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-}
-
 /* --- Services Grid --- */
 .service-grid {
   display: grid;
@@ -214,6 +182,7 @@
   color: var(--wooden-color);
   margin-bottom: 20px;
   display: block;
+  font-family: monospace;
 }
 .step-info h3 {
   font-size: 3rem;
