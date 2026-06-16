@@ -34,7 +34,7 @@
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.3) 0%,
-    var(--bg-color) 130%
+    var(--bg-color) 140%
   );
   z-index: -1;
 }
@@ -76,6 +76,10 @@
   line-height: 1.7;
 }
 
+.story-content p:last-child {
+  margin-bottom: 0;
+}
+
 .story-image {
   height: 500px;
   border-radius: 32px;
@@ -111,12 +115,6 @@
   gap: 16px;
 }
 
-.value-card:hover {
-  border-color: var(--wooden-color);
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(218, 109, 66, 0.05);
-}
-
 .value-header {
   display: flex;
   align-items: center;
@@ -139,6 +137,66 @@
   line-height: 1.6;
 }
 
+/* --- Parts Section --- */
+.parts-section {
+  border-top: 1px solid var(--glass-border);
+}
+
+.parts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.parts-intro {
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.parts-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+}
+
+.part-card {
+  background: var(--surface-color);
+  border: 1px solid var(--glass-border);
+  padding: 30px;
+  border-radius: 32px;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.part-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.part-icon {
+  font-size: 1.5rem;
+  color: var(--wooden-color);
+}
+
+.part-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.part-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 /* --- Protocol Grid --- */
 .protocol-section {
   border-top: 1px solid var(--glass-border);
@@ -156,11 +214,6 @@
   padding: 40px;
   border-radius: 32px;
   transition: all 0.4s ease;
-}
-
-.protocol-card:hover {
-  border-color: var(--wooden-color);
-  transform: translateY(-10px);
 }
 
 .protocol-icon {
@@ -199,12 +252,6 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-
-.guarantee-card:hover {
-  border-color: var(--wooden-color);
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(218, 109, 66, 0.05);
 }
 
 .guarantee-header {
@@ -258,6 +305,10 @@
   font-size: 1.1rem;
 }
 
+.cta-card .btn {
+  font-size: 1rem;
+}
+
 /* --- Responsive --- */
 @media (max-width: 1024px) {
   .values-grid {
@@ -272,6 +323,9 @@
   .guarantees-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .parts-container {
+    gap: 40px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -285,6 +339,7 @@
 
   .story-grid {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
   .story-image {
     height: 350px;
@@ -297,6 +352,10 @@
   }
   .cta-card {
     padding: 60px 24px;
+  }
+  .parts-container {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 }
 

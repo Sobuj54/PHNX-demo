@@ -69,6 +69,10 @@ h2:has(.section-title) {
   margin-bottom: 60px;
 }
 
+.card-hover:hover {
+  border: 1px solid var(--wooden-color);
+}
+
 /* --- Stats Component --- */
 .stats {
   background: var(--surface-color);
