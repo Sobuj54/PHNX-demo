@@ -119,7 +119,7 @@ document.querySelectorAll(".faq-item").forEach((item) => {
 // 5. Section Reveals (Optimized)
 gsap.utils
   .toArray(
-    ".service-card, .bento-card, .footer-col, .reserve-card, .testimonial-card, .faq-item, .reveal-item, .protocol-card, .story-content, .story-image, .guarantee-card",
+    ".service-card, .bento-card, .footer-col, .reserve-card, .testimonial-card, .faq-item, .reveal-item, .protocol-card, .story-content, .story-image, .guarantee-card, .value-card",
   )
   .forEach((el) => {
     gsap.from(el, {

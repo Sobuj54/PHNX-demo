@@ -89,6 +89,56 @@
   object-fit: cover;
 }
 
+/* --- Values Section --- */
+.values-section {
+  border-top: 1px solid var(--glass-border);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.value-card {
+  background: var(--surface-color);
+  border: 1px solid var(--glass-border);
+  padding: 32px;
+  border-radius: 24px;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.value-card:hover {
+  border-color: var(--wooden-color);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(218, 109, 66, 0.05);
+}
+
+.value-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.value-icon {
+  font-size: 1.25rem;
+  color: var(--wooden-color);
+}
+
+.value-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.value-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
 /* --- Protocol Grid --- */
 .protocol-section {
   border-top: 1px solid var(--glass-border);
@@ -210,6 +260,9 @@
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .story-grid {
     gap: 40px;
   }
@@ -224,6 +277,10 @@
 @media (max-width: 768px) {
   .about-hero p {
     max-width: 80%;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .story-grid {
@@ -247,5 +304,9 @@
   .about-hero p {
     max-width: 90%;
     font-size: 1rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
   }
 }
