@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GP | About Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          align-items: center;
+        "
+      >
+        <div class="logo"><img src="assets/logo.png" alt="PHNX REPAIR" /></div>
+
+        <div class="nav-links desktop-only">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="#process">Works</a>
+          <a href="#faq">News</a>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 20px">
+          <a href="#" class="btn btn-primary desktop-only">Reserve Slot</a>
+          <div class="hamburger mobile-only" id="hamburger">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="close-btn" id="closeMenu">&times;</div>
+      <div class="mobile-links">
+        <a href="index.html">Home</a>
+        <a href="#s"><span class="active">About</span></a>
+        <a href="#process">Works</a>
+        <a href="#faq">News</a>
+        <a
+          href="#reserve"
+          class="btn btn-primary"
+          style="margin-top: 20px; width: 100%; text-align: center"
+          >Reserve Slot</a
+        >
+      </div>
+    </div>
+
+    <section class="section-padding" id="reserve">
+      <div class="container">
+        <div class="reserve-card">
+          <div class="reserve-content">
+            <span class="section-tag">Direct Access</span>
+            <h2 style="margin-bottom: 20px">
+              <span class="section-title"> Reserve Your Slot. </span>
+            </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 40px">
+              Priority engineering for your frontier devices. Provide your
+              details to secure a professional diagnostic appointment.
+            </p>
+            <form class="reserve-form">
+              <div class="form-row">
+                <input type="text" placeholder="Full Name" required />
+                <input type="email" placeholder="Email Address" required />
+              </div>
+              <div class="form-row">
+                <input type="tel" placeholder="Phone Number" required />
+                <input
+                  type="text"
+                  placeholder="Device Model (e.g. iPhone 15 Pro Max)"
+                  required
+                />
+              </div>
+              <div class="form-row">
+                <input
+                  type="text"
+                  placeholder="Describe your issue (e.g. Cracked screen, Water damage)"
+                  required
+                />
+              </div>
+              <div class="form-row">
+                <div class="submit-btn">
+                  <button type="submit" class="btn btn-primary">
+                    Confirm Reservation
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="logo">
+              <img src="assets/logo.png" alt="PHNX REPAIR" />
+            </div>
+            <p
+              style="
+                color: var(--text-secondary);
+                max-width: 300px;
+                margin-bottom: 20px;
+              "
+            >
+              Redefining mobile engineering for the frontier generation.
+              Precision. Performance. Preservation.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Ecosystem</h4>
+            <ul>
+              <li><a href="#">Repairs</a></li>
+              <li><a href="#">Data Lab</a></li>
+              <li><a href="#">Enterprise</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">Our Lab</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Social</h4>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 PHNX REPAIR LABS. ALL RIGHTS RESERVED.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Library Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+
+    <!-- Project Logic -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
