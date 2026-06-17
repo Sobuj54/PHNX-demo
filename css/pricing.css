@@ -1,0 +1,193 @@
+.pricing-hero {
+  padding-top: 180px;
+  padding-bottom: 80px;
+  text-align: left;
+}
+
+.hero-desc {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+/* Pricing Grid */
+#pricing-section.section-padding {
+  padding-top: 40px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+}
+
+.pricing-card {
+  background: var(--surface-color);
+  border: 1px solid var(--glass-border);
+  border-radius: 32px;
+  overflow: hidden;
+  /* Include transform in transition for smooth hover lift */
+  transition:
+    border-color 0.4s ease,
+    background 0.4s ease,
+    transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card:hover {
+  border-color: var(--wooden-color);
+  transform: translateY(-15px); /* Slightly more lift for better feedback */
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.card-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.pricing-card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-icon {
+  color: var(--wooden-color);
+  margin-bottom: 20px;
+}
+
+.pricing-card h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+
+.pricing-card p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.price-list {
+  margin-bottom: 35px;
+  flex-grow: 1;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--glass-border);
+  font-size: 0.95rem;
+}
+
+.price-item span:last-child {
+  font-weight: 800;
+  color: #fff;
+}
+
+.price-item:last-child {
+  border-bottom: none;
+}
+
+.btn-outline {
+  border: 1px solid var(--glass-border);
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* Info Grid (Warranty etc) */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+.info-item h4 {
+  color: var(--wooden-color);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.info-item p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.text-center {
+  text-align: center;
+}
+
+.cta-desc {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 20px auto 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-hero {
+    padding-top: 140px;
+    text-align: center;
+  }
+
+  .hero-desc {
+    margin: 20px auto 0;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .pricing-card {
+    padding: 0;
+  }
+
+  .card-content {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}

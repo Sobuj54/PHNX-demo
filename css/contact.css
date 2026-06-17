@@ -31,6 +31,7 @@
   display: inline;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+  margin-left: -5px;
 }
 
 .contact-hero p {
@@ -230,6 +231,9 @@ select option {
 }
 
 @media (max-width: 768px) {
+  .contact-hero h1 {
+    margin-left: -4px;
+  }
   .contact-grid {
     grid-template-columns: 1fr;
   }

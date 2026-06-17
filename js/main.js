@@ -221,9 +221,41 @@ document.querySelector('a[href="#reserve"]').addEventListener("click", (e) => {
   });
 });
 
-// 11. Layout Stability Refresh
-// This ensures all ScrollTriggers are recalculated after the page is fully loaded,
-// preventing elements from staying hidden due to layout shifts (like pinning).
+// 12. Pricing Cards Scaling Animation
+function initPricingAnimations() {
+  const cards = gsap.utils.toArray(".pricing-card");
+  if (cards.length === 0) return;
+
+  cards.forEach((card) => {
+    gsap.fromTo(
+      card,
+      {
+        scale: 0.7,
+        opacity: 0,
+        y: 50,
+      },
+      {
+        scrollTrigger: {
+          trigger: card,
+          start: "top bottom-=100", // Start slightly before it enters the viewport
+          toggleActions: "play none none none",
+        },
+        scale: 1,
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        onComplete: () => {
+          // Clear transform so CSS hover can take over smoothly
+          gsap.set(card, { clearProps: "transform" });
+        },
+      },
+    );
+  });
+}
+
+// Initialize on load
 window.addEventListener("load", () => {
+  initPricingAnimations();
   ScrollTrigger.refresh();
 });
