@@ -62,6 +62,3 @@ A modern web browser (e.g., Chrome, Firefox, Safari, or Edge).
 4. Push to the branch (git push origin feature/NewFeature).
 5. Open a pull request.
 
-## License
-
-This project is licensed under the MIT License.
