@@ -117,10 +117,33 @@ document.querySelectorAll(".faq-item").forEach((item) => {
 });
 
 // 5. Section Reveals (Optimized)
+
+// 5a. Scaling Reveal (For Cards)
 gsap.utils
   .toArray(
-    ".service-card, .bento-card, .footer-col, .reserve-card, .testimonial-card, .faq-item, .reveal-item, .protocol-card, .story-content, .story-image, .guarantee-card, .value-card, .part-card, .pricing-card",
+    ".service-card, .reserve-card, .testimonial-card, .protocol-card, .guarantee-card, .value-card, .part-card, .pricing-card",
   )
+  .forEach((el) => {
+    gsap.from(el, {
+      scrollTrigger: {
+        trigger: el,
+        start: "top 92%",
+        toggleActions: "play none none none",
+      },
+      opacity: 0,
+      y: 50,
+      scale: 0.8,
+      duration: 1.2,
+      ease: "power2.out",
+      onComplete: () => {
+        gsap.set(el, { clearProps: "transform" });
+      },
+    });
+  });
+
+// 5b. Standard Reveal (For Non-Card Elements)
+gsap.utils
+  .toArray(".footer-col, .faq-item, .story-content, .story-image")
   .forEach((el) => {
     gsap.from(el, {
       scrollTrigger: {
