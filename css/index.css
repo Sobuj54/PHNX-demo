@@ -42,6 +42,7 @@
   display: inline;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+  margin-left: -7px;
 }
 .hero p {
   font-size: 1.25rem;
@@ -373,6 +374,7 @@
 
   .hero h1 {
     letter-spacing: -2px;
+    margin-left: -5px;
   }
 
   .process-stats {
@@ -396,6 +398,10 @@
 @media (max-width: 576px) {
   .hero {
     padding-top: 100px;
+  }
+
+  .hero h1 {
+    margin-left: -3px;
   }
 
   .hero p {

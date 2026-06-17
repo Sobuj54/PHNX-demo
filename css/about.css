@@ -51,6 +51,7 @@
   display: inline;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+  margin-left: -5px;
 }
 
 .about-hero p {
@@ -329,6 +330,9 @@
 }
 
 @media (max-width: 768px) {
+  .about-hero h1 {
+    margin-left: -4px;
+  }
   .about-hero p {
     max-width: 80%;
   }
@@ -360,6 +364,10 @@
 }
 
 @media (max-width: 576px) {
+  .about-hero h1 {
+    margin-left: -2px;
+  }
+
   .about-hero p {
     max-width: 90%;
     font-size: 1rem;
