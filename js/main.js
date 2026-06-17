@@ -131,8 +131,7 @@ gsap.utils
         toggleActions: "play none none none",
       },
       opacity: 0,
-      y: 50,
-      scale: 0.8,
+      scale: 0.5,
       duration: 1.2,
       ease: "power2.out",
       onComplete: () => {
