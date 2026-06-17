@@ -20,100 +20,115 @@ h2:has(.section-title) {
   width: 100%;
   overflow: hidden;
   position: relative;
-  background: var(--bg-color);
-  padding-top: 0; /* Remove top gap */
-  padding-bottom: 120px; /* Keep bottom spacing */
+  background: #000;
+  padding: 0;
 }
 
 .pricing-grid {
   display: flex;
   flex-wrap: nowrap;
   width: max-content;
-  padding: 0 5vw 0 0;
-  gap: 40px;
+  padding: 0;
+  gap: 0;
   will-change: transform;
 }
 
 .pricing-card {
-  width: 450px;
+  width: 100vw;
+  height: 100vh;
   flex-shrink: 0;
-  background: var(--surface-color);
-  border: 1px solid var(--glass-border);
-  border-radius: 32px;
-  overflow: hidden;
-  transition:
-    border-color 0.4s ease,
-    background 0.4s ease,
-    box-shadow 0.4s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
   display: flex;
   flex-direction: column;
-}
-
-.pricing-card:hover {
-  border-color: var(--wooden-color);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.card-image {
-  width: 100%;
-  height: 250px;
+  justify-content: center; /* Vertically center content */
+  align-items: flex-start; /* Keep text aligned to the left */
   overflow: hidden;
-  position: relative;
 }
 
-.card-image img {
+.pricing-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.pricing-card:hover .card-image img {
-  transform: scale(1.1);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.4) 40%,
+    rgba(0, 0, 0, 0.4) 60%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  z-index: 1;
 }
 
 .card-content {
-  padding: 40px;
+  position: relative;
+  z-index: 2;
+  /* padding: 60px 0; */
+  /* max-width: 50%; */
+  max-height: 90vh; /* Ensure it doesn't hit the screen edges */
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  justify-content: center; /* Center children internally */
+  gap: 24px;
+  overflow-y: auto; /* Allow vertical scroll if content is too tall */
+  scrollbar-width: thin;
+  scrollbar-color: var(--wooden-color) transparent;
 }
 
-.card-icon {
-  color: var(--wooden-color);
-  margin-bottom: 20px;
+.card-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card-content::-webkit-scrollbar-thumb {
+  background-color: var(--wooden-color);
+  border-radius: 10px;
 }
 
 .pricing-card h3 {
-  font-size: 1.8rem;
+  font-size: clamp(2rem, 8vh, 3.5rem);
   font-weight: 800;
-  margin-bottom: 15px;
-  letter-spacing: -1px;
+  color: #fff;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
 .pricing-card p {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 2vh, 1.2rem);
   line-height: 1.6;
+  max-width: 550px;
 }
 
 .price-list {
-  margin-bottom: 35px;
-  flex-grow: 1;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  padding: clamp(20px, 4vh, 40px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0; /* Don't squash the list */
+  max-width: 800px;
 }
 
 .price-item {
   display: flex;
   justify-content: space-between;
-  padding: 15px 0;
-  border-bottom: 1px solid var(--glass-border);
-  font-size: 0.95rem;
+  padding: clamp(10px, 2vh, 20px) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: clamp(0.9rem, 1.8vh, 1.1rem);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .price-item span:last-child {
   font-weight: 800;
-  color: #fff;
+  color: var(--wooden-color);
 }
 
 .price-item:last-child {
@@ -121,16 +136,49 @@ h2:has(.section-title) {
 }
 
 .btn-outline {
-  border: 1px solid var(--glass-border);
-  color: #fff;
+  border: 2px solid #fff;
+  color: #000;
+  background: #fff; /* Filled for better visibility on busy backgrounds */
   text-align: center;
-  width: 100%;
+  width: fit-content;
+  padding: 16px 48px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .btn-outline:hover {
-  background: #fff;
-  color: #000;
+  background: transparent;
+  color: #fff;
   border-color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Height-based adjustments for short viewports */
+@media (max-height: 700px) {
+  .card-content {
+    padding-top: 80px;
+    gap: 15px;
+  }
+  .price-list {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-height: 550px) {
+  .card-content {
+    padding-top: 60px;
+    gap: 10px;
+  }
+  .pricing-card h3 {
+    font-size: 1.8rem;
+  }
+  .pricing-card p {
+    display: none; /* Hide description on extremely short screens to prioritize prices */
+  }
 }
 
 /* Info Grid (Warranty etc) */
@@ -168,35 +216,27 @@ h2:has(.section-title) {
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .pricing-card h3 {
+    font-size: 2.5rem;
+  }
   .info-grid {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
+
+  .pricing-card p {
+    max-width: 450px;
+  }
 }
 
 @media (max-width: 768px) {
-  .pricing-hero {
-    padding-top: 130px;
-    padding-bottom: 30px;
-  }
-
-  .pricing-grid {
-    /* Keep horizontal for all devices */
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 20px;
-    padding: 0 0 0 1vw;
-  }
-
   .pricing-card {
-    width: auto; /* Optimized for mobile viewing */
-    padding: 0;
+    padding-top: 12vh;
   }
 
-  .card-content {
-    padding: 30px;
+  .pricing-card h3 {
+    font-size: 2rem;
   }
-
   .info-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -207,18 +247,10 @@ h2:has(.section-title) {
   .hero-desc {
     width: 100%;
   }
-  .pricing-grid {
-    /* Maintain horizontal track */
-    display: flex;
-    flex-wrap: nowrap;
+  .pricing-card h3 {
+    font-size: 1.8rem;
   }
-
-  .pricing-card {
-    width: 90vw; /* Optimized for mobile viewing */
-    padding: 0;
-  }
-
   .price-list {
-    margin-bottom: 20px;
+    padding: 20px;
   }
 }

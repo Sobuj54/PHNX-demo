@@ -153,8 +153,7 @@ function initPricingHorizontalScroll() {
   });
 
   const totalWidth = grid.scrollWidth;
-  const scrollDistance =
-    totalWidth - window.innerWidth + window.innerWidth * 0.1;
+  const scrollDistance = totalWidth - window.innerWidth;
 
   gsap.to(grid, {
     x: -scrollDistance,
@@ -163,7 +162,7 @@ function initPricingHorizontalScroll() {
       trigger: section,
       pin: true,
       scrub: 1,
-      start: "top 11%", // Pin at the very top for all devices
+      start: "top top", // Pin at the very top for full viewport
       end: () => `+=${scrollDistance}`,
       invalidateOnRefresh: true,
     },
