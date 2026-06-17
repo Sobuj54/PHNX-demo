@@ -13,7 +13,7 @@
 
 /* Pricing Grid */
 #pricing-section.section-padding {
-  padding-top: 40px;
+  padding-top: 30px;
 }
 
 .pricing-grid {
@@ -164,12 +164,8 @@
 
 @media (max-width: 768px) {
   .pricing-hero {
-    padding-top: 140px;
-    text-align: center;
-  }
-
-  .hero-desc {
-    margin: 20px auto 0;
+    padding-top: 130px;
+    padding-bottom: 30px;
   }
 
   .pricing-grid {
@@ -183,6 +179,11 @@
 
   .card-content {
     padding: 30px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 }
 
