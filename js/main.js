@@ -121,7 +121,7 @@ document.querySelectorAll(".faq-item").forEach((item) => {
 // 5a. Scaling Reveal (For Cards)
 gsap.utils
   .toArray(
-    ".service-card, .reserve-card, .testimonial-card, .protocol-card, .guarantee-card, .value-card, .part-card, .pricing-card",
+    ".service-card, .reserve-card, .testimonial-card, .protocol-card, .guarantee-card, .value-card, .part-card",
   )
   .forEach((el) => {
     gsap.from(el, {
@@ -131,8 +131,8 @@ gsap.utils
         toggleActions: "play none none none",
       },
       opacity: 0,
-      scale: 0.5,
-      duration: 1.2,
+      scale: 0.8,
+      duration: 1,
       ease: "power2.out",
       onComplete: () => {
         gsap.set(el, { clearProps: "transform" });
@@ -140,10 +140,56 @@ gsap.utils
     });
   });
 
+// 12. Horizontal Scroll for Pricing Page
+function initPricingHorizontalScroll() {
+  const section = document.querySelector("#pricing-section");
+  const grid = document.querySelector(".pricing-grid");
+
+  if (!section || !grid) return;
+
+  // Cleanup to prevent duplicates on resize
+  ScrollTrigger.getAll().forEach((t) => {
+    if (t.trigger === section) t.kill();
+  });
+
+  const totalWidth = grid.scrollWidth;
+  const scrollDistance =
+    totalWidth - window.innerWidth + window.innerWidth * 0.1;
+
+  gsap.to(grid, {
+    x: -scrollDistance,
+    ease: "none",
+    scrollTrigger: {
+      trigger: section,
+      pin: true,
+      scrub: 1,
+      start: "top 11%", // Pin at the very top for all devices
+      end: () => `+=${scrollDistance}`,
+      invalidateOnRefresh: true,
+    },
+  });
+}
+
+// Initialize on load
+window.addEventListener("load", () => {
+  ScrollTrigger.refresh();
+  initPricingHorizontalScroll();
+});
+
+// Refresh on resize
+let resizeTimer;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    ScrollTrigger.refresh();
+    initPricingHorizontalScroll();
+  }, 250);
+});
+
 // 5b. Standard Reveal (For Non-Card Elements)
 gsap.utils
   .toArray(
-    ".footer-col, .faq-item, .story-content, .story-image, .reserve-info",
+    ".footer-col, .faq-item, .story-content, .story-image, .reserve-info, .pricing-hero .container",
   )
   .forEach((el) => {
     gsap.from(el, {
@@ -247,8 +293,13 @@ document.querySelector('a[href="#reserve"]').addEventListener("click", (e) => {
 
 // 13. Reserve Page Reveal
 function initReserveReveal() {
-  const info = document.querySelector(".reserve-info");
-  const card = document.querySelector(".reserve-card");
+  const info =
+    document.querySelector(".reserve-info") ||
+    document.querySelector(".contact-info");
+
+  const card =
+    document.querySelector(".reserve-card") ||
+    document.querySelector(".contact-form-wrapper");
 
   if (!info || !card) return;
 

@@ -11,34 +11,46 @@
   margin-top: 20px;
 }
 
-/* Pricing Grid */
-#pricing-section.section-padding {
-  padding-top: 30px;
+h2:has(.section-title) {
+  margin-bottom: 40px;
+}
+
+/* Horizontal Scroll Section */
+#pricing-section {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-color);
+  padding-top: 0; /* Remove top gap */
+  padding-bottom: 120px; /* Keep bottom spacing */
 }
 
 .pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  padding: 0 5vw 0 0;
   gap: 40px;
+  will-change: transform;
 }
 
 .pricing-card {
+  width: 450px;
+  flex-shrink: 0;
   background: var(--surface-color);
   border: 1px solid var(--glass-border);
   border-radius: 32px;
   overflow: hidden;
-  /* Include transform in transition for smooth hover lift */
   transition:
     border-color 0.4s ease,
     background 0.4s ease,
-    transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow 0.4s ease;
   display: flex;
   flex-direction: column;
 }
 
 .pricing-card:hover {
   border-color: var(--wooden-color);
-  transform: translateY(-15px); /* Slightly more lift for better feedback */
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -169,11 +181,15 @@
   }
 
   .pricing-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    /* Keep horizontal for all devices */
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 0 0 0 1vw;
   }
 
   .pricing-card {
+    width: auto; /* Optimized for mobile viewing */
     padding: 0;
   }
 
@@ -187,8 +203,22 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
+  .hero-desc {
+    width: 100%;
+  }
   .pricing-grid {
-    grid-template-columns: 1fr;
+    /* Maintain horizontal track */
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .pricing-card {
+    width: 90vw; /* Optimized for mobile viewing */
+    padding: 0;
+  }
+
+  .price-list {
+    margin-bottom: 20px;
   }
 }
