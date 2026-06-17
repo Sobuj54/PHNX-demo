@@ -1,60 +1,125 @@
 #reserve {
-  background: var(--surface-color);
-  border-top: 1px solid var(--glass-border);
-  padding-top: 160px;
+  background: var(--bg-color);
+  padding-top: 180px;
 }
-.reserve-card {
-  background: linear-gradient(145deg, #0f0f0f 0%, #050505 100%);
-  border: 1px solid var(--glass-border);
-  border-radius: 48px;
-  padding: 80px;
-  position: relative;
-  overflow: hidden;
+
+.reserve-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
 }
-.reserve-card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 80%;
-  height: 200%;
-  background: radial-gradient(
-    circle at center,
-    rgba(121, 40, 202, 0.05) 0%,
-    transparent 70%
-  );
-  pointer-events: none;
+
+.reserve-info {
+  padding-right: 40px;
 }
-.reserve-form {
+
+.reserve-desc {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 25px 0 40px;
+}
+
+/* Trust List */
+.trust-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
 }
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.trust-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--wooden-color);
+}
+
+/* Reserve Card */
+.reserve-card-container {
+  perspective: 1000px;
+}
+
+.reserve-card {
+  background: var(--surface-color);
+  border: 1px solid var(--glass-border);
+  border-radius: 40px;
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+}
+
+/* Form Styles */
+.static-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  color: var(--text-secondary);
+}
+
 .form-row {
   display: flex;
   gap: 20px;
 }
-.reserve-form input,
-.reserve-form select {
+
+.form-row .form-group {
   flex: 1;
+}
+
+.static-form input,
+.static-form select,
+.static-form textarea {
+  width: 100%;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--glass-border);
   padding: 18px 24px;
-  border-radius: 12px;
+  border-radius: 14px;
   color: #fff;
   font-size: 1rem;
   outline: none;
   transition: all 0.3s ease;
 }
-.reserve-form input:focus,
-.reserve-form select:focus {
+
+.static-form input:focus,
+.static-form select:focus,
+.static-form textarea:focus {
   border-color: var(--wooden-color);
   background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgba(218, 109, 66, 0.1);
 }
 
-.form-row:has(.submit-btn) {
-  display: flex;
-  justify-content: center;
+.btn-block {
+  font-size: 1rem;
+  padding: 20px;
+  margin-top: 10px;
 }
 
 .submit-btn {
@@ -62,28 +127,54 @@
   justify-content: center;
 }
 
-.reserve-form .btn {
-  cursor: pointer;
-  margin-top: 10px;
-  font-size: 1rem;
+/* Responsive */
+@media (max-width: 1400px) {
+  .reserve-grid {
+    gap: 40px;
+  }
 }
 
 @media (max-width: 1024px) {
+  .reserve-info {
+    padding-right: 0;
+  }
+
   .reserve-card {
-    padding: 40px 24px;
+    padding: 40px;
   }
 }
 
 @media (max-width: 768px) {
   #reserve {
-    padding-top: 125px;
+    padding-top: 140px;
   }
 
-  .reserve-card {
-    padding: 40px 24px;
+  .reserve-grid {
+    grid-template-columns: 1fr;
+    gap: 0px;
+  }
+
+  .reserve-info {
+    margin-bottom: 60px;
+  }
+
+  .reserve-desc {
+    width: 80%;
   }
 
   .form-row {
     flex-direction: column;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .reserve-card {
+    padding: 30px 20px;
+    border-radius: 30px;
+  }
+
+  .static-form {
+    gap: 20px;
   }
 }

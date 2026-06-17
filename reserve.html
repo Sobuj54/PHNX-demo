@@ -54,44 +54,133 @@
 
     <section class="section-padding" id="reserve">
       <div class="container">
-        <div class="reserve-card">
-          <div class="reserve-content">
-            <span class="section-tag">Direct Access</span>
-            <h2 style="margin-bottom: 20px">
-              <span class="section-title"> Reserve Your Slot. </span>
-            </h2>
-            <p style="color: var(--text-secondary); margin-bottom: 40px">
-              Priority engineering for your frontier devices. Provide your
-              details to secure a professional diagnostic appointment.
+        <div class="reserve-grid">
+          <!-- Left Side: Content & Trust -->
+          <div class="reserve-info">
+            <span class="section-tag">Priority Access</span>
+            <h2 class="section-title">Secure Your Diagnostic.</h2>
+            <p class="reserve-desc">
+              Experience the frontier of mobile restoration. Our lead engineers
+              are ready to triage your device with precision and original-grade
+              components.
             </p>
-            <form class="reserve-form">
-              <div class="form-row">
-                <input type="text" placeholder="Full Name" required />
-                <input type="email" placeholder="Email Address" required />
+
+            <div class="trust-list">
+              <div class="trust-item">
+                <div class="trust-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                    ></path>
+                  </svg>
+                </div>
+                <span>Lifetime Warranty on all hardware.</span>
               </div>
-              <div class="form-row">
-                <input type="tel" placeholder="Phone Number" required />
-                <input
-                  type="text"
-                  placeholder="Device Model (e.g. iPhone 15 Pro Max)"
-                  required
-                />
+              <div class="trust-item">
+                <div class="trust-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <span>Express 45-minute triage protocol.</span>
               </div>
-              <div class="form-row">
-                <input
-                  type="text"
-                  placeholder="Describe your issue (e.g. Cracked screen, Water damage)"
-                  required
-                />
+              <div class="trust-item">
+                <div class="trust-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                </div>
+                <span>OEM standard precision parts only.</span>
               </div>
-              <div class="form-row">
+            </div>
+          </div>
+
+          <!-- Right Side: The Form -->
+          <div class="reserve-card-container">
+            <div class="reserve-card">
+              <form class="static-form">
+                <div class="form-group">
+                  <label>Full Name</label>
+                  <input type="text" placeholder="e.g. John Doe" required />
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Email Address</label>
+                    <input
+                      type="email"
+                      placeholder="john@example.com"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Phone Number</label>
+                    <input
+                      type="tel"
+                      placeholder="+1 (555) 000-0000"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Device Model</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. iPhone 15 Pro"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Preferred Service</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Local Lab Drop-off"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Issue Description</label>
+                  <textarea
+                    placeholder="Please describe the hardware failure..."
+                    rows="4"
+                    required
+                  ></textarea>
+                </div>
+
                 <div class="submit-btn">
-                  <button type="submit" class="btn btn-primary">
-                    Confirm Reservation
+                  <button type="submit" class="btn btn-primary btn-block">
+                    Confirm Priority Reservation
                   </button>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>

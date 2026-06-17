@@ -142,7 +142,9 @@ gsap.utils
 
 // 5b. Standard Reveal (For Non-Card Elements)
 gsap.utils
-  .toArray(".footer-col, .faq-item, .story-content, .story-image")
+  .toArray(
+    ".footer-col, .faq-item, .story-content, .story-image, .reserve-info",
+  )
   .forEach((el) => {
     gsap.from(el, {
       scrollTrigger: {
@@ -243,7 +245,35 @@ document.querySelector('a[href="#reserve"]').addEventListener("click", (e) => {
   });
 });
 
-// Initialize on load
+// 13. Reserve Page Reveal
+function initReserveReveal() {
+  const info = document.querySelector(".reserve-info");
+  const card = document.querySelector(".reserve-card");
+
+  if (!info || !card) return;
+
+  const tl = gsap.timeline();
+  tl.from(info.children, {
+    opacity: 0,
+    x: -30,
+    stagger: 0.1,
+    duration: 1,
+    ease: "power3.out",
+  }).from(
+    card,
+    {
+      opacity: 0,
+      x: 30,
+      scale: 0.95,
+      duration: 1,
+      ease: "power3.out",
+    },
+    "-=0.8",
+  );
+}
+
+// Initialize all features on load
 window.addEventListener("load", () => {
   ScrollTrigger.refresh();
+  initReserveReveal();
 });
