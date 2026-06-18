@@ -259,6 +259,24 @@ footer .fa-solid {
   max-width: 90%;
 }
 
+.footer-social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.footer-social-icons a {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-social-icons a:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
