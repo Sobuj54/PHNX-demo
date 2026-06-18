@@ -226,6 +226,7 @@ h2:has(.section-title) {
   font-weight: 800;
   margin-bottom: 10px;
   display: block;
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .theme-card h3 {
