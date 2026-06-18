@@ -121,7 +121,7 @@ document.querySelectorAll(".faq-item").forEach((item) => {
 // 5a. Scaling Reveal (For Cards)
 gsap.utils
   .toArray(
-    ".service-card, .reserve-card, .testimonial-card, .protocol-card, .guarantee-card, .value-card, .part-card",
+    ".service-card, .testimonial-card, .protocol-card, .guarantee-card, .value-card, .part-card, .theme-card",
   )
   .forEach((el) => {
     gsap.from(el, {
@@ -141,7 +141,7 @@ gsap.utils
   });
 
 // 12. Horizontal Scroll for Pricing Page
-function initPricingHorizontalScroll() {
+/* function initPricingHorizontalScroll() {
   const section = document.querySelector("#pricing-section");
   const grid = document.querySelector(".pricing-grid");
 
@@ -167,12 +167,13 @@ function initPricingHorizontalScroll() {
       invalidateOnRefresh: true,
     },
   });
-}
+} */
 
 // Initialize on load
 window.addEventListener("load", () => {
   ScrollTrigger.refresh();
-  initPricingHorizontalScroll();
+  // initPricingHorizontalScroll();
+  initReserveReveal();
 });
 
 // Refresh on resize
@@ -181,7 +182,7 @@ window.addEventListener("resize", () => {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {
     ScrollTrigger.refresh();
-    initPricingHorizontalScroll();
+    // initPricingHorizontalScroll();
   }, 250);
 });
 
@@ -314,7 +315,7 @@ function initReserveReveal() {
     {
       opacity: 0,
       x: 30,
-      scale: 0.95,
+      scale: 0.8,
       duration: 1,
       ease: "power3.out",
     },

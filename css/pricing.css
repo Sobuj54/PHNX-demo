@@ -16,7 +16,7 @@ h2:has(.section-title) {
 }
 
 /* Horizontal Scroll Section */
-#pricing-section {
+/* #pricing-section {
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -43,8 +43,8 @@ h2:has(.section-title) {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Vertically center content */
-  align-items: flex-start; /* Keep text aligned to the left */
+  justify-content: center; 
+  align-items: flex-start; 
   overflow: hidden;
 }
 
@@ -58,8 +58,8 @@ h2:has(.section-title) {
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.4) 40%,
-    rgba(0, 0, 0, 0.4) 60%,
+    rgba(0, 0, 0, 0.4) 5%,
+    rgba(0, 0, 0, 0.6) 10%,
     rgba(0, 0, 0, 0.9) 100%
   );
   z-index: 1;
@@ -68,14 +68,12 @@ h2:has(.section-title) {
 .card-content {
   position: relative;
   z-index: 2;
-  /* padding: 60px 0; */
-  /* max-width: 50%; */
-  max-height: 90vh; /* Ensure it doesn't hit the screen edges */
+  max-height: 90vh; 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center children internally */
+  justify-content: center; 
   gap: 24px;
-  overflow-y: auto; /* Allow vertical scroll if content is too tall */
+  overflow-y: auto; 
   scrollbar-width: thin;
   scrollbar-color: var(--wooden-color) transparent;
 }
@@ -94,7 +92,6 @@ h2:has(.section-title) {
   font-weight: 800;
   color: #fff;
   margin-bottom: 0;
-  text-transform: uppercase;
   line-height: 1;
 }
 
@@ -108,12 +105,12 @@ h2:has(.section-title) {
 .price-list {
   margin-top: 10px;
   margin-bottom: 20px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   padding: clamp(20px, 4vh, 40px);
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  flex-shrink: 0; /* Don't squash the list */
+  flex-shrink: 0; 
   max-width: 800px;
 }
 
@@ -123,7 +120,6 @@ h2:has(.section-title) {
   padding: clamp(10px, 2vh, 20px) 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   font-size: clamp(0.9rem, 1.8vh, 1.1rem);
-  color: rgba(255, 255, 255, 0.8);
 }
 
 .price-item span:last-child {
@@ -135,28 +131,10 @@ h2:has(.section-title) {
   border-bottom: none;
 }
 
-.btn-outline {
-  border: 2px solid #fff;
-  color: #000;
-  background: #fff; /* Filled for better visibility on busy backgrounds */
-  text-align: center;
-  width: fit-content;
-  padding: 16px 48px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
+.btn {
+  width: max-content;
 }
 
-.btn-outline:hover {
-  background: transparent;
-  color: #fff;
-  border-color: #fff;
-  transform: translateY(-3px);
-}
-
-/* Height-based adjustments for short viewports */
 @media (max-height: 700px) {
   .card-content {
     padding-top: 80px;
@@ -177,7 +155,137 @@ h2:has(.section-title) {
     font-size: 1.8rem;
   }
   .pricing-card p {
-    display: none; /* Hide description on extremely short screens to prioritize prices */
+    display: none; 
+  }
+} */
+
+/* New Pricing Card Grid */
+#new-pricing-cards {
+  padding: 10px 0 80px 0;
+  background: var(--bg-color);
+}
+
+.pricing-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.theme-card {
+  position: relative;
+  background: var(--surface-color);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-card:hover {
+  transform: scale(1.03);
+  border-color: var(--wooden-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.card-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--surface-color));
+}
+
+.card-body {
+  padding: 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-tag {
+  position: absolute;
+  z-index: 2;
+  left: 20px;
+  top: 20px;
+  border: 1px solid var(--wooden-color);
+  border-radius: 30px;
+  padding: 10px;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.theme-card h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.theme-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.card-price-list {
+  margin-bottom: 30px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.card-price-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--glass-border);
+  font-size: 0.9rem;
+}
+
+.card-price-item span:first-child {
+  color: var(--text-secondary);
+}
+
+/* .card-price-item span:last-child {
+  color: var(--wooden-color);
+  font-weight: 800;
+} */
+
+.theme-card .btn {
+  width: 100%;
+  text-align: center;
+}
+
+.theme-card .btn-primary {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+  margin-top: auto;
+}
+
+.theme-card .btn-primary:hover {
+  box-shadow: none;
+  transform: translateY(0);
+  background: white;
+  color: black;
+}
+/* Responsive */
+@media (max-width: 1024px) {
+  .pricing-card-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -216,35 +324,43 @@ h2:has(.section-title) {
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .pricing-card h3 {
+  /* .pricing-card h3 {
     font-size: 2.5rem;
-  }
+  } */
   .info-grid {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
 
-  .pricing-card p {
+  /* .pricing-card p {
     max-width: 450px;
-  }
+  } */
 }
 
 @media (max-width: 768px) {
-  .pricing-card {
+  /* .pricing-card {
     padding-top: 12vh;
   }
 
   .pricing-card h3 {
     font-size: 2rem;
+  } */
+
+  .pricing-hero {
+    padding-top: 140px;
+    padding-bottom: 40px;
   }
   .info-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
+  }
+  .pricing-card-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 576px) {
-  .hero-desc {
+  /* .hero-desc {
     width: 100%;
   }
   .pricing-card h3 {
@@ -252,5 +368,8 @@ h2:has(.section-title) {
   }
   .price-list {
     padding: 20px;
+  } */
+  .pricing-card-grid {
+    grid-template-columns: 1fr;
   }
 }
