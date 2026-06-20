@@ -37,7 +37,7 @@
 .contact-hero p {
   font-size: 1.2rem;
   color: var(--text-secondary);
-  max-width: 600px;
+  max-width: 80%;
   margin-top: 20px;
 }
 
@@ -222,6 +222,9 @@ select option {
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
+  .contact-hero p {
+    max-width: 100%;
+  }
   .contact-grid {
     gap: 40px;
   }

@@ -266,7 +266,7 @@ footer .fa-solid {
 }
 
 .footer-social-icons a {
-  color: var(--text-secondary);
+  color: var(--wooden-color);
   font-size: 1.2rem;
   transition: all 0.3s ease;
   display: inline-block;
@@ -275,6 +275,10 @@ footer .fa-solid {
 .footer-social-icons a:hover {
   color: #fff;
   transform: translateY(-3px);
+}
+
+.footer-social-icons i {
+  color: var(--wooden-color);
 }
 
 .footer-grid {
@@ -378,7 +382,11 @@ footer .logo img {
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-grid .footer-col:first-child {
+    grid-column: span 3;
   }
 
   .section-padding {
@@ -421,6 +429,14 @@ footer .logo img {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .footer-grid .footer-col:first-child {
+    grid-column: auto;
+  }
+
+  .footer-social-icons {
+    margin-bottom: 15px;
   }
 
   .footer-bottom {
